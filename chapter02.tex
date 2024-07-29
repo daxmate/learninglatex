@@ -608,3 +608,31 @@ a_2 = b_2 + c_2 - d_2 + e_2
 \end{Vmatrix}
 \end{math}
 \end{texlst}
+
+\section{浮动体}
+在 \LaTeX\ 中，浮动体（floats）是指可以在文档中自由移动位置的元素，如表格和图像。浮动体使得我们能够更灵活地安排这些元素的位置，从而避免在页面布局中出现不美观的断裂。
+
+\LaTeX\ 中提供了两种浮动体，\texinline{figure}用于图片，\texinline{table}用于表格。表格与图片的插入在之前的小节中已经讲过了，使用浮动体只需要将图片与表格放在相应的浮动体环境中即可。
+
+\LaTeX\  中的浮动体提供了四种浮动的策略：
+\begin{itemize}
+	\item h -- here原地
+	\item t -- top页首
+	\item b -- bottom页末
+	\item p -- page单独一页
+\end{itemize}
+
+我们可以将这四种策略组合起来，当一种策略无法被满足时选用下一种，下面是一段示例代码：
+\begin{texlst}[listing only]
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|c|r|}\hline
+		标题          & 数量 \\\hline
+		\LaTeX\  入门 & 100  \\\hline
+	\end{tabular}
+\end{table}
+\end{texlst}
+插入的表格将依次按照原地、页首、页末、单独开页的策略来浮动。
+
+\LaTeX\ 中的浮动体为我们提供了灵活且美观的方式来管理图像和表格。通过 \texinline{figure} 和 \texinline{table}
+环境，我们可以轻松地插入和管理这些元素，并使用选项来调整它们的位置。
