@@ -287,7 +287,7 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 	\caption{不可分行空白}
 \end{table}
 
-你可能会觉得\texinline[showspaces]{\}\textvisiblespace 这个命令是多此一举，因为用空格就直接可以输出一个空格，这个命令还有存在的必要吗？我们来看下面一个示例：
+你可能会觉得\texinline{\|\textvisiblespace|} 这个命令是多此一举，因为用空格就直接可以输出一个空格，这个命令还有存在的必要吗？我们来看下面一个示例：
 \begin{texlst}[listing and text]
 	\LaTeX\ is a typesetting system.
 
@@ -296,7 +296,7 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 
 可以看到第一个写法\LaTeX
 与is中间的空格消失了，因为空格或者其他非字母的字符是命令的界定符(除了几个特殊的\TeX\
-命令)，在一个命令之后的空格就不会再输出空格。所以需要用\texinline[showspaces]{\}\textvisiblespace 来解决这个问题。
+命令)，在一个命令之后的空格就不会再输出空格。所以需要用\texinline{\|\textvisiblespace|} 来解决这个问题。
 
 \subsection{数学模式中的空格}
 在数学模式下，LaTeX
