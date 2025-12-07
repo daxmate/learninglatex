@@ -17,7 +17,7 @@
 \hfuzz=10pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % minted settings 
-\usepackage[outputdir=build]{minted}
+\usepackage{minted}
 \newmintinline[texinline]{latex}{breaklines, breakbefore=\space, escapeinside=||}
 \newmintinline[shinline]{shell}{breaklines}
 \newcommand\showdim[1]{\texinline{#1}=\the#1}
@@ -47,40 +47,40 @@
 \colorlet{framecolor}{green!70!blue!30}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ctexset{
-  section/format += {\flushleft\color{titlecolor}\pingfang},
-  section/number = {\arabic{section}},
-  section/name = {第,节},
-  section/numberformat += {\color{titlecolor}\fontsize{48}{64}\selectfont}
+section/format += {\flushleft\color{titlecolor}\heiti},
+section/number = {\arabic{section}},
+section/name = {第,节},
+section/numberformat += {\color{titlecolor}\fontsize{48}{64}\selectfont}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % tcolorbox settings
 \newtcblisting[auto counter,number within=section]{texlst}[1][]{%
-listing engine=minted,
-minted language=latex,
-sidebyside,
-minted options app={linenos, numbersep=5pt},
-lower separated=false,
-colframe=framecolor,
-righthand width=3cm,
-title={\textsf{代码示例\thetcbcounter}},
-% before=\begin{figure}[H],
-% after=\end{figure},
-#1}
+	listing engine=minted,
+	minted language=latex,
+	sidebyside,
+	minted options app={linenos, numbersep=5pt},
+	lower separated=false,
+	colframe=framecolor,
+	righthand width=3cm,
+	title={\textsf{代码示例\thetcbcounter}},
+	% before=\begin{figure}[H],
+	% after=\end{figure},
+	#1}
 
 \makeatletter
 \setlength{\@fptop}{0pt}
 \makeatother
 
 \newtcblisting[auto counter,number within=section]{shellcmd}[1][]{%
-listing only,
-listing engine=minted,
-minted language=shell,
-colframe=framecolor,
-title={CMD \thetcbcounter},
-% before=\begin{figure}[htpb],
-% after=\end{figure},
-#1}
+	listing only,
+	listing engine=minted,
+	minted language=shell,
+	colframe=framecolor,
+	title={CMD \thetcbcounter},
+	% before=\begin{figure}[htpb],
+	% after=\end{figure},
+	#1}
 
 \newcommand{\inlinedemo}[1]{\texinline{#1} \dotfill \(\displaystyle #1 \)}
 
@@ -92,7 +92,6 @@ title={CMD \thetcbcounter},
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % general settings
 \setlength{\headwidth}{\textwidth}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \includeonly{chapter02}
