@@ -94,7 +94,7 @@ section/numberformat += {\color{titlecolor}\fontsize{48}{64}\selectfont}
 \setlength{\headwidth}{\textwidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\includeonly{chapter02}
+\IfFileExists{local-config}{\input{local-config}}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
