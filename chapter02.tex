@@ -16,21 +16,21 @@
 \section{Hello World}
 按惯例，我们首先在文本编辑器中写一个\texinline{hello world}，让\LaTeX\ 先用起来。如果是完全新手的话，建议首先使用发行版自带的编辑器，或者是overleaf的在线编辑器，因为对运行环境的集成度高，所以容易上手。
 
-\begin{texlst}[listing only, label={code:hello}, nameref={Hello World示例代码}]
+\begin{texcode}[listing only, label={code:hello}, nameref={Hello World示例代码}]
 \documentclass{article}
 \begin{document}
 Hello World
 \end{document}
-\end{texlst}
+\end{texcode}
 
 将上面的代码输入到编辑器中，然后编译(在发行版的编辑器会有编译的按钮)，完成之后就会看到生成的PDF文件中显示的“Hello
 World”。
 
 下面是对于这段代码的说明：
 \begin{enumerate}
-	\forcsvlist{\item}{
-	      第一个语句\texinline{\documentclass{article}}是指定文档类型，这里指定的是\texinline{artile}类型。,
-	      \texinline{\begin{document}}和\texinline{\end{document}}之间是正文区。,
+\forcsvlist{\item}{
+第一个语句\texinline{\documentclass{article}}是指定文档类型，这里指定的是\texinline{artile}类型。,
+\texinline{\begin{document}}和\texinline{\end{document}}之间是正文区。,
 文档类型与正文之间称为导言区，这里可以加载其他宏包或者进行一些设定，这个示例里面这些都没有，我们会在后面看到。
 }
 \end{enumerate}
@@ -69,7 +69,7 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 目录的生成也很简单，用\texinline{\tableofcontents}命令就可以自动生成。如果某些章节你不希望出现在目录里，可以用相应的章节命令的星号版本。
 
 下面是一个简单的示例：
-\begin{texlst}[listing only]
+\begin{texcode}[listing only]
 	%!tex program = lualatex
 	\documentclass{ctexart}
 	\title{我的巨著}
@@ -85,7 +85,7 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 	这个小节标题不会有编号，只有标题。
 
 	\end{document}
-\end{texlst}
+\end{texcode}
 
 \clearpage
 
@@ -107,9 +107,9 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 命令是 \LaTeX\ 的强大之处，它们用于执行特定的格式化任务或插入特殊符号。命令总是以反斜杠 \texinline{\} 开头，后跟命令名。例如，
 \texinline{\section{Introduction}}用于创建一个章节标题，\texinline{\alpha} 用于插入希腊字母\alpha
 。命令可以有参数，参数用花括号 \texinline|{}| 包围。命令还可以有可选参数，可选参数一般放在\texinline{[]}中。如下例：
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 	\framebox[3cm]{这是一个盒子}
-\end{texlst}
+\end{texcode}
 
 命令的名称有两种:
 \begin{enumerate}
@@ -120,11 +120,11 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 
 \subsection{注释}
 注释目前还没有遇到，注释的作用是向文档中添加说明或解释，这些内容在编译时不会被包含在最终的PDF或其他格式的输出文件中。注释对于理解代码、临时移除代码段或测试文档中的特定部分非常有用。注释用\%开始。
-\begin{texlst}[label={code:comments}]
+\begin{texcode}[label={code:comments}]
 	这是可见文本
 
 	% 这是注释不可见
-\end{texlst}
+\end{texcode}
 
 \subsection{小结}
 文本、命令和注释构成了 \LaTeX\ 源文件的基础，它们协同工作，使你能够创建结构化、格式化丰富且专业的文档。掌握这三种语句的使用，是成为一名高效 \LaTeX\ 用户的关键。通过实践，你将学会如何将简单的文本转换成复杂且美观的文档，同时利用命令来控制文档的布局和样式，以及使用注释来保持代码的清晰和可维护性。
@@ -157,7 +157,7 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 的强大之处在于它能够轻松地处理各种复杂的符号和字符，尤其适合于学术和科研领域的文档创作。当涉及到数学、物理、化学等学科时，希腊字母和专业符号的使用尤为频繁。幸运的是，\LaTeX\ 为这些特殊字符提供了简洁的命令。
 \subsubsection{输入希腊字母}
 希腊字母在 \LaTeX\ 中非常常见，无论是用于变量、函数命名还是在公式中表示特定的物理量或数学概念。要插入希腊字母，你只需要在反斜杠后面加上字母的名字即可。
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 \begin{itemize}[nosep]
 \item \alpha
 \item \beta
@@ -183,14 +183,14 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 \item \psi\quad\Psi
 \item \omega\quad\Omega
 \end{itemize}
-\end{texlst}
+\end{texcode}
 
 \pagebreak
 
 \subsubsection{输入数学符号}
 除了希腊字母，\LaTeX\ 还提供了大量的数学符号。例如：
 \footnote{示例代码中用的\texinline{itemize}列表环境后面马上会讲到。}
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 \begin{itemize}[nosep]
 	\item $\times$
 	\item $\div$
@@ -206,7 +206,7 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 	\item $\sqrt{x}$
 	\item $\frac{a}{b}$
 \end{itemize}
-\end{texlst}
+\end{texcode}
 注意数学符号需要在数学模式下才能输入，否则会出错，数学符号优雅的输出是\LaTeX
 很重要的一个特性，具体的内容到数学公式的部分再细讲。
 \vfill
@@ -214,7 +214,7 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 \subsubsection{其他特殊符号}
 对于其他特殊字符，\LaTeX\ 同样提供了一系列命令。例如：
 
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 \begin{itemize}[nosep]
 	\item \dag
 	\item \ddag
@@ -227,12 +227,12 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 	\item \AA
 	\item \aa
 \end{itemize}
-\end{texlst}
+\end{texcode}
 
 \LaTeX\ 中还提供了一个手册，可以快速查询各种各样的符号的输出方法，在命令行中输入以下命令来查阅。
-\begin{shellcmd}
+\begin{shellcode}
 	texdoc symbols
-\end{shellcmd}
+\end{shellcode}
 
 \subsection{小结}
 \LaTeX\ 为输入特殊字符提供了极其丰富的支持，无论是希腊字母、数学符号还是其他领域常用的字符。通过简单的命令，你可以轻松地将这些符号融入你的文档中，使你的文本既专业又美观。掌握这些命令将极大地提升你使用 \LaTeX\ 创作学术和科研文档的能力。
@@ -241,9 +241,9 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 在 \LaTeX\ 中，空格不仅仅是文本中的空白区域；它们是文档格式化的重要组成部分，用于控制单词间的间隔、段落内的行距，甚至是数学公式中的符号间隔。理解 \LaTeX\ 如何处理空格，以及如何控制空格的大小和位置，是制作高质量文档的关键。
 \subsection{自动空格处理}
 \LaTeX\ 通常自动管理文本中的空格。例如，无论你在源文件中输入多少空格，\LaTeX\ 通常只会显示一个标准的单词间隔。同样，连续的空格会被合并成一个，多余的空格会被忽略。这意味着你不必担心源文件中的空格数量，\LaTeX\ 会自动调整以保持良好的阅读体验。
-\begin{texlst}
+\begin{texcode}
 	这是 关于空格    的示例。
-\end{texlst}
+\end{texcode}
 
 \subsection{空格大小}
 \LaTeX
@@ -288,11 +288,11 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 \end{table}
 
 你可能会觉得\texinline{\|\textvisiblespace|} 这个命令是多此一举，因为用空格就直接可以输出一个空格，这个命令还有存在的必要吗？我们来看下面一个示例：
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 	\LaTeX\ is a typesetting system.
 
 	\LaTeX\ is a typesetting system.
-\end{texlst}
+\end{texcode}
 
 可以看到第一个写法\LaTeX
 与is中间的空格消失了，因为空格或者其他非字母的字符是命令的界定符(除了几个特殊的\TeX\
@@ -301,9 +301,9 @@ World”改成“你好，世界”，你将看不到相应的输出。这是因
 \subsection{数学模式中的空格}
 在数学模式下，LaTeX
 会自动调整符号和表达式之间的空格，以反映数学运算的语义。例如，函数名和变量之间会自动添加适当的空间。然而，你仍然可以使用上述命令来微调数学公式的布局。
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 $a^2+b^2=c^2$
-\end{texlst}
+\end{texcode}
 
 \subsection{避免自动空格处理}
 有时你可能不希望 \LaTeX\ 自动合并或忽略空格，例如在代码示例或诗歌中。在这种情况下，可以使用 \texinline{verbatim} 环境，它会原样保留所有的空格和换行。
@@ -323,16 +323,16 @@ $a^2+b^2=c^2$
 如果你需要在特定位置强制换行，可以使用双反斜杠 \texinline{\\} 或者 \texinline{\newline} 命令。
 \texinline{\\*}命令也是强制换行，但是防止在此处分页。\texinline{\newline}的效果与\texinline{\\}一样，因为\texinline{\\}在输入方面的优势，一般都用\texinline{\\}。另外\texinline{\linebreak}也可以起到强制换行的效果，但是\texinline{\linebreak}会影响到分页，\texinline{\newline}则不会。
 另外，\texinline{\\}命令还可以接受参数来控制纵向的距离。
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 	这里\\换行
 
 	然后\\[2em]空两行
-\end{texlst}
+\end{texcode}
 
 但是请注意，过多的手动换行可能会破坏 \LaTeX\ 的自然段落布局，导致不理想的间距问题。
 \subsection{分段}
 在 \LaTeX\ 中，创建一个新的段落非常简单，只需在段落之间插入一个空白行(多个空白行视为一个)即可。
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 	这是
 	一个句子，
 	中间的回车被忽略。
@@ -342,13 +342,13 @@ $a^2+b^2=c^2$
 
 
 	多个空行被视为一个。
-\end{texlst}
+\end{texcode}
 
 此外，\LaTeX\ 中用\texinline{\par}来显式的起始一个段落。
 
-\begin{texlst}
+\begin{texcode}
 	段落1\par 段落2
-\end{texlst}
+\end{texcode}
 
 \subsection{小结}
 在 \LaTeX\ 中，换行和分段是文本布局的基本组成部分。了解如何使用 \LaTeX\ 的自动换行功能以及如何在必要时进行手动干预，将有助于你创建结构清晰、格式一致的高质量文档。
@@ -386,33 +386,33 @@ $a^2+b^2=c^2$
 \LaTeX\ 中，创建列表不仅容易，而且高度可定制，允许你根据文档的具体需求来调整样式和格式。
 \subsection{无序列表（项目符号列表）}
 在 LaTeX 中创建无序列表（也称为项目符号列表）非常简单，使用 \texinline{itemize} 环境即可。每个列表项都以 \texinline{\item} 命令开始。
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 	\begin{itemize}
 		\item 第一项
 		\item 第二项
 		\item 第三项
 	\end{itemize}
-\end{texlst}
+\end{texcode}
 
 \subsection{有序列表（编号列表）}
 如果你需要一个有序列表，即带有数字或其他类型的编号的列表，那么应该使用 \texinline{enumerate} 环境。
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 	\begin{enumerate}
 		\item 第一项
 		\item 第二项
 		\item 第三项
 	\end{enumerate}
-\end{texlst}
+\end{texcode}
 
 \subsection{描述列表}
 描述列表（或定义列表）用于提供术语及其定义。在 \LaTeX\ 中，使用 \texinline{description} 环境。
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 	\begin{description}
 		\item[术语一] 定义一
 		\item[术语二] 定义二
 		\item[术语三] 定义三
 	\end{description}
-\end{texlst}
+\end{texcode}
 
 \subsection{小结}
 列表是 \LaTeX\ 文档中非常实用的功能，通过使用 \texinline{itemize}、\texinline{enumerate} 和 \texinline{description}
@@ -424,16 +424,16 @@ $a^2+b^2=c^2$
 
 \subsection{基本语法}
 
-\begin{texlst}[listing only]
+\begin{texcode}[listing only]
 \begin{tabular}{列类型}
     表格内容
 \end{tabular}
-\end{texlst}
+\end{texcode}
 
 其中，\enquote{列类型}定义了表格的列数和每一列的对齐方式（左对齐\texinline{l}、居中\texinline{c}、右对齐\texinline{r}）。以及是否加竖线\texinline{|}，比如\texinline#{|l|c|r|}#就定义了三列，并且每列中间都用竖线分隔。
 
 \subsection{创建一个简单的表格}
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 \begin{tabular}{|c|r|}
     \hline
     名称 & 数量 \\ \hline
@@ -442,7 +442,7 @@ $a^2+b^2=c^2$
     橙子 & 2 \\
     \hline
 \end{tabular}
-\end{texlst}
+\end{texcode}
 可以看到，列之间用\texinline{&}隔开，行需要手动用\texinline{\hline}命令来绘制横线。
 
 \subsection{小结}
@@ -453,7 +453,7 @@ $a^2+b^2=c^2$
 \section{插入图片}
 在学术论文、报告或任何类型的文档中插入图片是一种常见的做法。\LaTeX\
 提供了多种方式来插入和处理图片，使其能够很好地融入文档的整体设计中。在\LaTeX\ 中插入图片，需要在导言区加载\texinline{graphicx}\footnote{\LaTeX\ 中还有一个graphics宏包，graphicx属于增强版本，所以现在一般都用这个}包。这是我们第一次用到第三方的宏包的情况，我们来看一下插入图片的基本语法。
-\begin{texlst}[listing only]
+\begin{texcode}[listing only]
 	%!tex program = lualatex
 	\documentclass{article}
 	\usepackage{graphicx} % 加载图形处理包
@@ -466,7 +466,7 @@ $a^2+b^2=c^2$
     \label{fig:example} % 图片的标签，可以在其他地方引用图片
 \end{figure}
 	\end{document}
-\end{texlst}
+\end{texcode}
 
 下面我们看一下上面的代码插入图片的效果。
 \begin{figure}[htbp]
@@ -491,41 +491,41 @@ $a^2+b^2=c^2$
 \subsection{常用的数学环境}
 \begin{itemize}[nosep]
 	\item \texinline{equation} 和 \texinline{equation*}，用单行公式，星号的版本不编号
-	      \begin{texlst}[listing and text, righthand width=5cm, lower separated=true]
+	      \begin{texcode}[listing and text, righthand width=5cm, lower separated=true]
 \begin{equation}
 	  \sum_{l=0}^{n}(n-l)^{l}
 \end{equation}
-		\end{texlst}
+		\end{texcode}
 
 	\item \texinline{multline} 和 \texinline{multline*}，多行公式
-	      \begin{texlst}[listing and text, righthand width=5cm, lower separated=true]
+	      \begin{texcode}[listing and text, righthand width=5cm, lower separated=true]
 \begin{multline*}
 	  a+b+c+\\
 	  f + i + j + k
 \end{multline*}
-		\end{texlst}
+		\end{texcode}
 
 	\item \texinline{gather} 和 \texinline{gather*}，多行公式，居中对齐
-	      \begin{texlst}[listing and text, righthand width=5cm, lower separated=true]
+	      \begin{texcode}[listing and text, righthand width=5cm, lower separated=true]
 \begin{gather*}
 a_1 = b_1 + c_1 \\
 a_2 = b_2 + c_2 - d_2 + e_2
 \end{gather*}
-		\end{texlst}
+		\end{texcode}
 	\item \texinline{align} 和 \texinline{align*}，多行公式，按\texinline{&}来对齐
-	      \begin{texlst}[listing and text, righthand width=5cm, lower separated=true]
+	      \begin{texcode}[listing and text, righthand width=5cm, lower separated=true]
 \begin{align*}
   a_1 &= b_1 + c_1 \\
   a_2 &= b_2 + c_2 - d_2 + e_2
 \end{align*}
-	  \end{texlst}
+	  \end{texcode}
 	\item \texinline{flalign} 和 \texinline{flalign*}\footnote{fl是full length的意思}，多行公式，对齐到整个页面的宽度
-	      \begin{texlst}[listing and text, righthand width=5cm, lower separated=true]
+	      \begin{texcode}[listing and text, righthand width=5cm, lower separated=true]
 \begin{flalign*}
   a_{11} + b_{11} & = c_{11} & a_{12} & = b_{12}\\
   b_{21} & = c_{21} & a_{22} & = b_{22} + c_{22}
 \end{flalign*}
-	  \end{texlst}
+	  \end{texcode}
 \end{itemize}
 
 \subsection{常用的数学命令}
@@ -553,61 +553,61 @@ a_2 = b_2 + c_2 - d_2 + e_2
 \end{itemize}
 \vspace{1cm}
 另外，还有一些与矩阵相关的命令也挺常见。
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 \begin{math}
 \begin{matrix}
 	a & b \\
 	c & d
 \end{matrix}
 \end{math}
-\end{texlst}
+\end{texcode}
 \vfill
 \pagebreak
 
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 \begin{math}
 \begin{pmatrix}
 	a & b \\
 	c & d
 \end{pmatrix}
 \end{math}
-\end{texlst}
+\end{texcode}
 
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 \begin{math}
 \begin{bmatrix}
 	a & b \\
 	c & d
 \end{bmatrix}
 \end{math}
-\end{texlst}
+\end{texcode}
 
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 \begin{math}
 \begin{Bmatrix}
 	a & b \\
 	c & d
 \end{Bmatrix}
 \end{math}
-\end{texlst}
+\end{texcode}
 
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 \begin{math}
 \begin{vmatrix}
 	a & b \\
 	c & d
 \end{vmatrix}
 \end{math}
-\end{texlst}
+\end{texcode}
 
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 \begin{math}
 \begin{Vmatrix}
 	a & b \\
 	c & d
 \end{Vmatrix}
 \end{math}
-\end{texlst}
+\end{texcode}
 
 \section{浮动体}
 在 \LaTeX\ 中，浮动体（floats）是指可以在文档中自由移动位置的元素，如表格和图像。浮动体使得我们能够更灵活地安排这些元素的位置，从而避免在页面布局中出现不美观的断裂。
@@ -623,7 +623,7 @@ a_2 = b_2 + c_2 - d_2 + e_2
 \end{itemize}
 
 我们可以将这四种策略组合起来，当一种策略无法被满足时选用下一种，下面是一段示例代码：
-\begin{texlst}[listing only]
+\begin{texcode}[listing only]
 \begin{table}[htbp]
 	\centering
 	\begin{tabular}{|c|r|}\hline
@@ -631,7 +631,7 @@ a_2 = b_2 + c_2 - d_2 + e_2
 		\LaTeX\  入门 & 100  \\\hline
 	\end{tabular}
 \end{table}
-\end{texlst}
+\end{texcode}
 插入的表格将依次按照原地、页首、页末、单独开页的策略来浮动。
 
 \LaTeX\ 中的浮动体为我们提供了灵活且美观的方式来管理图像和表格。通过 \texinline{figure} 和 \texinline{table}
@@ -640,21 +640,20 @@ a_2 = b_2 + c_2 - d_2 + e_2
 \section{交叉引用}
 \LaTeX\ 提供了强大的交叉引用功能，可以方便地引用章节、图表、表格、公式等。要引用之前我们要用\texinline{\label}命令给相应的位置打上标签，然后使用的时候用\texinline{\ref}命令来引用即可。
 
-\begin{texlst}[listing only]
+\begin{texcode}[listing only]
 	\section{Cross Reference}\label{sec:intro}
-\end{texlst}
+\end{texcode}
 
 一般打标签推荐的方式是像上例中一样，把类型和名字之间用冒号隔开，这样在比较大型的项目中不容易搞混。标签的名称也尽可能地与内容有相关性。
 
 \LaTeX\ 的自动化功能使得文档结构发生变化时，编号会自动更新，引用的编号也会随之同步更新，这个机制保证了在任何时候引用都是是正确的。
 
 下面的示例演示如何在需要的地方引用标签：
-\begin{texlst}[listing only]
+\begin{texcode}[listing only]
 	在第\ref{sec:intro}小节中，我们……
-\end{texlst}
+\end{texcode}
 
 此外，如果我们加载了\texinline{hyperref}宏包的话，引用的时候会生成超链接，这样就可以实现快速的跳转来查阅引用的内容。
 
 交叉引用是一个既简单又强大的功能，熟练使用可以提高文档质量与可维护性。最后说一下，交叉引用需要多次编译，这点请注意一下。
-
 

@@ -1,20 +1,20 @@
 \section{展开的顺序及规则}
 在\LaTeX 中，控制序列展开是一个很令人头疼的事情。说起来比较抽象，我们用一个示例来演示一下。
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
   \newcommand\cmda{abc}
   \uppercase{\cmda}
-\end{texlst}
+\end{texcode}
 
 代码并没有如预期的那样输出ABC，在这个过程，先展开\texinline{\uppercase}，然后展开\texinline|{}|，但是并不会展开\texinline|{}|中的需要进一步展开的内容，所以\texinline{\uppercase}没有获得任何参数。最后展开了\texinline{\cmda}，所以就得到了我们看到的\texinline{abc}。
 
 这里就到了\texinline{\expandafter}命令出场的时候了，我们可以让\texinline|{}|先不展开，先展开\texinline{\cmda}，请参看下例：
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
   \newcommand\cmda{abc}
   \uppercase\expandafter{\cmda}
-\end{texlst}
+\end{texcode}
 
 这么看来似乎展开也不麻烦，但是这个只是最简单的情况，下面我们来看，如果有两个控制序列需要优先展开的情况。
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 \newcommand\cmda{abc}
 \newcommand\cmdb{def}
 \uppercase\expandafter{\cmda\cmdb}
@@ -22,13 +22,13 @@
 \let\ea\expandafter
 
 \uppercase\ea\ea\ea{\ea\cmda\cmdb}
-\end{texlst}
+\end{texcode}
 
 来解释一下这个运行的过程是怎么样发生的。第一个\texinline{\ea}命令将第二个\texinline{\ea}命令保留下来，第三个\texinline{\ea}命令让\texinline|{}|不要展开，第四个\texinline{\ea}命令让\texinline{\cmda}不要展开，然后展开\texinline{\cmdb}。所以第一轮延后展开的结果变成了：\texinline{\ea{\cmda def}}，这个就跟单个控制序列优先展开是一样的了。
 
 如果要展开的控制序列数量进一步增加的话会变得更加烦琐，下面我们来看再增加控制序列会如何。
 
-\begin{texlst}[listing and text]
+\begin{texcode}[listing and text]
 \newcommand\cmda{abc}
 \newcommand\cmdb{def}
 \newcommand\cmdc{ghi}
@@ -42,6 +42,6 @@
 \ea\ea\ea\cmdb%
 \ea\cmdc%
 \cmdd}
-\end{texlst}
+\end{texcode}
 
 在要优先展开4个控制序列的情况下，最外面一层用了15个\texinline{\expandafter}，简直太夸张了。不过，可以简单的理解，\texinline{\expandafter}是跳着进行的，所以15个\texinline{\expandafter}命令进行一轮后就剩下7个，第二轮后变成3个，第三轮1个。如果理解了这些的话，你就会明白如果要优先展开5个控制序列的话，最外层需要用31个\texinline{\expandafter}。
